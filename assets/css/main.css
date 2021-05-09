@@ -39,6 +39,7 @@
 	transform: scale(1);
 }
 
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -2965,7 +2966,7 @@ input, select, textarea {
 
 /* Goto Next */
 
-	.goto-next {
+	.goto-next, .goto-next-black {
 		border: 0;
 		bottom: 0;
 		display: block;
@@ -2995,6 +2996,29 @@ input, select, textarea {
 			width: 2em;
 			z-index: 1;
 		}
+
+		.goto-next-black:before {
+			background-image: url("images/arrowBlack.svg");
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			display: block;
+			height: 1.5em;
+			left: 50%;
+			margin: -0.75em 0 0 -1em;
+			position: absolute;
+			top: 50%;
+			width: 2em;
+			z-index: 1;
+		}
+
+		@media screen and (max-width: 980px){
+			.goto-next-black:before {
+			background-image: url("images/arrow.svg");
+		}
+	}
+
 
 /* Spotlight */
 
@@ -3121,7 +3145,7 @@ input, select, textarea {
 			position: absolute;
 		}
 
-		.spotlight .goto-next {
+		.spotlight .goto-next .goto-next-black {
 			-moz-transform: translate(0,0);
 			-webkit-transform: translate(0,0);
 			-ms-transform: translate(0,0);
@@ -3186,7 +3210,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		.spotlight.inactive .goto-next {
+		.spotlight.inactive .goto-next .goto-next-black {
 			-moz-transform: translate(0,1.5em);
 			-webkit-transform: translate(0,1.5em);
 			-ms-transform: translate(0,1.5em);
@@ -3732,7 +3756,7 @@ input, select, textarea {
 							padding-left: 0;
 						}
 
-				.spotlight .goto-next {
+				.spotlight .goto-next .goto-next-black {
 					display: none;
 				}
 
@@ -3748,7 +3772,7 @@ input, select, textarea {
 				background-attachment: scroll;
 			}
 
-				#banner .goto-next {
+				#banner .goto-next .goto-next-black {
 					height: 7em;
 				}
 
@@ -3831,7 +3855,7 @@ input, select, textarea {
 
 		/* Goto Next */
 
-			.goto-next:before {
+			.goto-next:before .goto-next-black:before{
 				height: 0.8em;
 				margin: -0.4em 0 0 -0.6em;
 				width: 1.2em;
